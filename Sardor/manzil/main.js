@@ -1,6 +1,5 @@
 const elBtn = document.getElementById("getLocation");
 const elInfo = document.getElementById("details");
-const elBtnShake = document.getElementById("shakeScreen");
 let map;
 
 elBtn.addEventListener("click", () => {
@@ -44,9 +43,3 @@ elBtn.addEventListener("click", () => {
   }
 });
 
-elBtnShake.addEventListener("click", () => {
-  document.body.classList.add("shake");
-  setTimeout(() => {
-    document.body.classList.remove("shake");
-  }, 1000);
-});
