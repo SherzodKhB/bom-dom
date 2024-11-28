@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #222;
+}
+
+button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+.shake {
+    animation: shake 1s, background-flash 1s; /* Zilzila va fon animatsiyalari */
+    animation-iteration-count: 1;
+}
+
+@keyframes shake {
+    0% { transform: translate(3px, 3px) rotate(0deg); }
+    10% { transform: translate(-3px, -3px) rotate(-2deg); }
+    20% { transform: translate(-10px, 5px) rotate(2deg); }
+    30% { transform: translate(10px, -10px) rotate(0deg); }
+    40% { transform: translate(5px, 5px) rotate(2deg); }
+    50% { transform: translate(-5px, -5px) rotate(-2deg); }
+    60% { transform: translate(-15px, 10px) rotate(0deg); }
+    70% { transform: translate(15px, -15px) rotate(-2deg); }
+    80% { transform: translate(-5px, -5px) rotate(2deg); }
+    90% { transform: translate(5px, 15px) rotate(0deg); }
+    100% { transform: translate(3px, -3px) rotate(-2deg); }
+}
+
+@keyframes background-flash {
+    0% { background-color: #f9f9f9; }
+    25% { background-color: #ffeb3b; }
+    50% { background-color: #ff5722; }
+    75% { background-color: #f44336; }
+    100% { background-color: #f9f9f9; }
+}
