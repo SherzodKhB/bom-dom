@@ -57,7 +57,6 @@ button:hover {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Specific styles for each season */
 .winter { background: linear-gradient(to bottom, #00c6fb, #005bea); color: #fff; }
 .spring { background: linear-gradient(to bottom, #00c853, #b9fbc0); color: #fff; }
 .summer { background: linear-gradient(to bottom, #ffb347, #ffcc33); color: #000; }
