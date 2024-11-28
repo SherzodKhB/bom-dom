@@ -41,8 +41,8 @@ button:hover {
 }
 
 .shake {
-  animation: shake 1s; /* Animatsiya davomiyligi 1 soniya */
-  animation-iteration-count: 1; /* Faqat bir marta bajariladi */
+  animation: shake 1s; 
+  animation-iteration-count: 1; 
 }
 
 @keyframes shake {

@@ -3,11 +3,9 @@ const elInfo = document.getElementById("details");
 let map;
 
 elBtn.addEventListener("click", () => {
-  // DOM ma'lumotlarini tozalash
   elInfo.innerText = "Manzilni aniqlayapmiz...";
   if (map) map.remove();
 
-  // Geolokatsiyani olish
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
