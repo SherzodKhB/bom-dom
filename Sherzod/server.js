@@ -47,6 +47,8 @@ app.post('/verify', (req, res) => {
 
 // Foydalanuvchini ro'yxatdan o'tkazish uchun endpoint
 app.post('/register', (req, res) => {
+    console.log("keldi");
+    
     const { image, username } = req.body;
 
     if (!image || !username) {

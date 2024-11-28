@@ -48,3 +48,29 @@
          alert("An error occurred during verification.");
      });
  });
+
+
+
+ document.getElementById('imageForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const imageInput = document.getElementById('imageInput');
+    const file = imageInput.files[0];
+    
+    const reader = new FileReader();
+    reader.onloadend = function () {
+        const base64Image = reader.result;
+        
+        fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ image: base64Image, username: 'someusername' })
+        })
+        .then(response => response.json())
+        .then(data => console.log(data));
+    }
+    reader.readAsDataURL(file);
+
+});
