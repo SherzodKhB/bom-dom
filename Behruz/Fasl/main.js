@@ -1,23 +1,37 @@
-function changeSeason(season) {
-    const body = document.body;
-    const seasonImage = document.getElementById('seasonImage');
-    const title = document.querySelector('h1');
-
-    if (season === 'winter') {
-        body.style.background = 'linear-gradient(to bottom, #00c6fb, #005bea)';
-        seasonImage.src = 'https://cdn-icons-png.flaticon.com/512/4151/4151022.png';
-        title.textContent = "Qish fasli! Hammasi muzlab qoldi ❄️";
-    } else if (season === 'spring') {
-        body.style.background = 'linear-gradient(to bottom, #00c853, #b9fbc0)';
-        seasonImage.src = 'https://cdn-icons-png.flaticon.com/512/4151/4151000.png';
-        title.textContent = "Bahor fasli! Gullar ochilmoqda 🌸";
-    } else if (season === 'summer') {
-        body.style.background = 'linear-gradient(to bottom, #ffb347, #ffcc33)';
-        seasonImage.src = 'https://cdn-icons-png.flaticon.com/512/869/869869.png';
-        title.textContent = "Yoz fasli! Quyosh charaqlayapti 🌞";
-    } else if (season === 'autumn') {
-        body.style.background = 'linear-gradient(to bottom, #ff7e5f, #feb47b)';
-        seasonImage.src = 'https://cdn-icons-png.flaticon.com/512/4151/4151003.png';
-        title.textContent = "Kuz fasli! Barglar to'kilmoqda 🍂";
+// Qish uchun animatsiya
+document.getElementById("qish").addEventListener("click", function () {
+    setSeason("❄️", "snowflake", "#87ceeb");
+  });
+  
+  // Bahor uchun animatsiya
+  document.getElementById("bahor").addEventListener("click", function () {
+    setSeason("🌸", "flower", "#a8e6cf");
+  });
+  
+  // Yoz uchun animatsiya
+  document.getElementById("yoz").addEventListener("click", function () {
+    setSeason("☀️", "sunray", "#ffeb3b");
+  });
+  
+  // Kuz uchun animatsiya
+  document.getElementById("kuz").addEventListener("click", function () {
+    setSeason("🍂", "leaf", "#ffa726");
+  });
+  
+  // Fasllar uchun umumiy funksiya
+  function setSeason(symbol, className, bgColor) {
+    const container = document.getElementById("animation-container");
+    container.innerHTML = ""; // Avvalgi animatsiyalarni tozalash
+    document.body.style.background = bgColor; // Fon rangini o'zgartirish
+  
+    // 100 ta animatsion element yaratish
+    for (let i = 0; i < 100; i++) {
+      const element = document.createElement("div");
+      element.className = className;
+      element.style.left = Math.random() * 100 + "vw";
+      element.style.animationDuration = Math.random() * 3 + 2 + "s";
+      element.innerHTML = symbol;
+      container.appendChild(element);
     }
-}
+  }
+  
