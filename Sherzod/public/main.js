@@ -26,7 +26,7 @@
      const imageData = canvas.toDataURL('image/png');
      
      // Serverga yuborish (quyi qism backend bilan ishlaydi)
-     fetch('/verify', {
+     fetch('http://localhost:3000/verify', {
          method: 'POST',
          headers: {
              'Content-Type': 'application/json'
@@ -54,6 +54,8 @@
  document.getElementById('imageForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
+    
+
     const imageInput = document.getElementById('imageInput');
     const file = imageInput.files[0];
     
@@ -61,7 +63,7 @@
     reader.onloadend = function () {
         const base64Image = reader.result;
         
-        fetch('/register', {
+        fetch('http://localhost:3000/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

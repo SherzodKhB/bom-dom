@@ -5,6 +5,10 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
+const cors = require('cors');
+app.use(cors({ origin: 'http://127.0.0.1:5500' }));
+
+
 // Foydalanuvchi ro'yxatidagi suratlar saqlanadigan joy
 const USER_IMAGES_DIR = path.join(__dirname, 'user_images');
 
